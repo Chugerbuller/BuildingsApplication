@@ -27,16 +27,15 @@ Owner InputOwner() {
 Flat InputFlat() {
 	Flat flat;
 	vector<Owner> room_owners;
+	Owner owner;
+	int input;
+	bool exit = true;
+	int part_check = 0;
 
 	cout << "\nEnter room number: "; cin >> flat.flat_num;
 
-	bool exit = true;
-	int part_check = 0;
 	do
 	{
-		Owner owner;
-		int input;
-
 		cout << "\nOwners\n1)Add owner\n2)Exit\nEnter mode: "; cin >> input;
 		switch (input)
 		{
@@ -62,11 +61,7 @@ Flat InputFlat() {
 
 	} while (exit);
 
-	for (Owner item : room_owners)
-	{
-		flat.AddOwner(item);
-	}
-
+	for (Owner item : room_owners) flat.AddOwner(item);
 	return flat;
 }
 Building InputBuilding() {
@@ -156,7 +151,7 @@ void BuildingsApp(vector<Building>* houses_data) {
 
 	cout << "\n\tHouse application\n";
 	do {
-		cout << "\n1)Add house\n2)Show information about house\n3)Save in vec\n4)Exit\nEnter mode: "; cin >> input;
+		cout << "\n1)Add house\n2)Show information about house\n3)Save in array\n4)Exit\nEnter mode: "; cin >> input;
 
 		switch (input)
 		{
